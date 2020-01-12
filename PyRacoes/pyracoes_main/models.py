@@ -38,7 +38,7 @@ class Animal(models.Model):
 
 class User(models.Model):
     user_django = models.OneToOneField(UserDJANGO, on_delete=models.CASCADE)
-    user_animals = models.ManyToManyField(Animal, blank=True, null=True)
+    user_animals = models.ManyToManyField(Animal, blank=True)
 
     def __str__(self):
         return self.user_django.email

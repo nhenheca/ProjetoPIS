@@ -5,6 +5,8 @@
     <title>Main</title>
 </head>
 <body>
-
+    {% for ration in rations %}
+        <div>{{ ration.ration_name }}</div>
+    {% endfor %}
 </body>
 </html>
