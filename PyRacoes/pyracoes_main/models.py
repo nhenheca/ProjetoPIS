@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User as UserDJANGO
 
 # Create your models here.
 class Type(models.Model):
@@ -36,12 +37,11 @@ class Animal(models.Model):
 
 
 class User(models.Model):
-    user_name = models.CharField(max_length=255)
-    user_email = models.CharField(max_length=255)
-    user_password = models.CharField(max_length=255)
-    user_animals = models.ManyToManyField(Animal)
+    user_django = models.OneToOneField(UserDJANGO, on_delete=models.CASCADE)
+    user_animals = models.ManyToManyField(Animal, blank=True, null=True)
+
     def __str__(self):
-        return self.user_name +"/"+ self.user_email
+        return self.user_django.email
 
 
 class Attributes(models.Model):
