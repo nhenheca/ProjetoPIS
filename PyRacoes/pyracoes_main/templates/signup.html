@@ -18,17 +18,32 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
 </head>
 <body class="text-center">
-<form class="form-signin">
+<!--<form class="form-signin">
     <img class="mb-4" src="{% static 'images/logo_transparent.png' %}" alt="" width="300" height="300">
     <h1 class="h3 mb-3 font-weight-normal text-white">Cadastrar-se</h1>
     <label for="inputEmail" class="sr-only">Endereço de Email</label>
     <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de Email" required autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <div class="checkbox mb-3"></div>
     <p class="mb-3 font-weight-normal text-white">Já possui conta? <a class="text-white" href="/login">Inicie sessão</a></p>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Registar</button>
     <p class="mt-5 mb-3 text-white">&copy; 2017-2019</p>
+</form>-->
+<form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+    <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+        <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+    <p style="color: red">{{ error }}</p>
+    {% endfor %}
+    </p>
+    {% endfor %}
+    <button type="submit">Sign up</button>
 </form>
 </body>
 </html>
