@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login as auth_login
-from django.contrib.auth import  authenticate
-from .models import User, Animal,Ration
+from django.contrib.auth import authenticate
+from .models import User, Animal, Ration
 from django.http import HttpResponse
+
+
 # Create your views here.
 
 def index(request):
@@ -21,7 +23,7 @@ def signup(request):
             auth_login(request, user)
             return redirect(home)
     return render(request, 'signup.html', {'form': form})
-    #return render(request, "signup.html")
+    # return render(request, "signup.html")
 
 
 def login(request):
