@@ -18,16 +18,23 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
 </head>
 <body class="text-center">
-<form class="form-signin">
+<form  method="post" class="form-signin">
+    {% csrf_token %}
     <img class="mb-4" src="{% static 'images/logo_transparent.png' %}" alt="" width="300" height="300">
     <h1 class="h3 mb-3 font-weight-normal text-white">Iniciar sessão</h1>
-    <label for="inputEmail" class="sr-only">Endereço de Email</label>
+    <!--<label for="inputEmail" class="sr-only">Endereço de Email</label>
     <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de Email" required autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>-->
+    <label for="id_username" class="sr-only">Nome de Utilizador</label>
+    <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username" class="form-control" placeholder="Nome de Utilizador">
+
+    <label for="id_password" class="sr-only">Password</label>
+    <input type="password" name="password" autocomplete="current-password" required="" id="id_password" class="form-control" placeholder="Password">
+
     <p class="mb-3 font-weight-normal text-white">Não possui conta? <a class="text-white" href="/signup">Registe-se</a></p>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-    <p class="mt-5 mb-3 text-white">&copy; 2017-2019</p>
+    <!--<p class="mt-5 mb-3 text-white">&copy; 2017-2019</p>-->
 </form>
 </body>
 </html>
