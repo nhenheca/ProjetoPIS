@@ -14,6 +14,7 @@ def index(request):
 
 
 def signup(request):
+    auth_logout(request)
     form = UserCreationForm(request.POST)
     if request.method == 'POST':
         if form.is_valid():
