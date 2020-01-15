@@ -55,12 +55,12 @@ def logout(request):
 
 def search(request):
     if request.method == 'POST':
-        age = request.POST['age']
-        atrib = request.POST['atrib']
-        type = request.POST['type']
-        port = request.POST['port']
-        classification = request.POST['classification']
-        aux = Ration.objects.filter(ration_age=age, ration_atrib=atrib, ration_type=type, ration_port=port, ration_classification=classification)
+        ration_age = request.POST['ration_age']
+        ration_atrib = request.POST['ration_atrib']
+        ration_type = request.POST['ration_type']
+        ration_port = request.POST['ration_port']
+        ration_classification = request.POST['ration_classification']
+        aux = Ration.objects.all().filter(ration_age=ration_age, ration_atrib=ration_atrib, ration_type=ration_type, ration_port=ration_port, ration_classification=ration_classification)
         #aux = Ration.objects.all().filter(ration_age=age).filter(ration_atrib=atrib).filter(ration_type=type).filter(ration_port=port).filter(ration_classification=classification)
         #aux = Ration.objects.all()
         args = {"aux": aux}

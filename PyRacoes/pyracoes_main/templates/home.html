@@ -25,26 +25,26 @@
             <div class="list-group">
                 <form method="post" class="form-signin" action="{% url 'search' %}">
                     {% csrf_token %}
-                    <select class="form-control" id="age" name="age">
+                    <select class="form-control" id="ration_age" name="ration_age">
                         <option value="Junior">Junior</option>
                         <option value="Adulto">Adulto</option>
                         <option value="Senior">Senior</option>
                     </select>
-                    <select multiple class="form-control" id="atrib" name="atrib">
+                    <select class="form-control" id="ration_atrib" name="ration_atrib">
                         {% for atribs in atribs %}
                         <option value={{ atribs.attributes_name }}>{{ atribs.attributes_name}}</option>
                         {% endfor %}
                     </select>
-                    <select class="form-control" id="type" name="type">
-                        <option value="Gato">Gato</option>
+                    <select class="form-control" id="ration_type" name="ration_type">
                         <option value="Cão">Cão</option>
+                        <option value="Gato">Gato</option>
                     </select>
-                    <select class="form-control" id="port" name="port">
+                    <select class="form-control" id="ration_port" name="ration_port">
                         <option value="Pequeno">Pequeno</option>
                         <option value="Médio">Médio</option>
                         <option value="Grande">Grande</option>
                     </select>
-                    <select class="form-control" id="classification" name="classification">
+                    <select class="form-control" id="ration_classification" name="ration_classification">
                         <option value="Económica">Económica</option>
                         <option value="Standart">Standart</option>
                         <option value="Premium">Premium</option>
