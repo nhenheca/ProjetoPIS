@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import authenticate
 from django.contrib.auth import logout as auth_logout
-from .models import User, Animal, Ration
+from .models import User, Animal, Ration, Attributes
 from django.http import HttpResponse
 
 
@@ -40,8 +40,8 @@ def login(request):
 
 
 def home(request):
-    rations = Ration.objects.all()
-    args = {"rations": rations}
+    atribs = Attributes.objects.all()
+    args = {"atribs": atribs}
     if request.user.id == None:
         return render(request, "deny.html")
     else:

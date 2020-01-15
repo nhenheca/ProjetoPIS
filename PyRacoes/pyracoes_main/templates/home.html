@@ -18,31 +18,69 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 </head>
 <body>
-<!--{% for ration in rations %}
-    <div>{{ ration.ration_name }}</div>
-{% endfor %}-->
+
 <div class="container">
     <div class="row">
         <div class="col-lg-3">
             <h1 class="my-4"></h1>
             <div class="list-group">
-                <a href="#" class="list-group-item">Category 1</a>
-                <a href="#" class="list-group-item">Category 2</a>
-                <a href="#" class="list-group-item">Category 3</a>
+                <form method="post" class="form-signin">
+
+                    <select class="form-control" id="age">
+                        <option value="Junior">Junior</option>
+                        <option value="Adulto">Adulto</option>
+                        <option value="Senior">Senior</option>
+                    </select>
+                    <select multiple class="form-control" id="atrib">
+                        {% for attributes in atribs %}
+                        <option value={{ Attributes.attributes_name }}>{{ Attributes.attributes_name}}</option>
+                        {% endfor %}
+                    </select>
+                    <select class="form-control" id="type">
+                        <option value="Gato">Gato</option>
+                        <option value="Cão">Cão</option>
+                    </select>
+                    <select class="form-control" id="port">
+                        <option value="Pequeno">Pequeno</option>
+                        <option value="Médio">Médio</option>
+                        <option value="Grande">Grande</option>
+                    </select>
+                    <select class="form-control" id="classification">
+                        <option value="Económica">Económica</option>
+                        <option value="Standart">Standart</option>
+                        <option value="Premium">Premium</option>
+                    </select>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Pesquisar</button>
+                </form>
+
             </div>
         </div>
         <div class="col-lg-9">
             <h1 class="my-4"></h1>
-            <div class="list-group">
-                <a href="#" class="list-group-item">Category 1</a>
-                <a href="#" class="list-group-item">Category 2</a>
-                <a href="#" class="list-group-item">Category 3</a>
-            </div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                    <th scope="col">Handle</th>
+                    <th scope="col">Handle</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
-</div>
-</div>
-
 </body>
 </html>
