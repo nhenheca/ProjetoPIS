@@ -55,11 +55,11 @@ def logout(request):
 
 def search(request):
     if request.method == 'POST':
-        if form.is_valid():
-            age = form.cleaned_data.get('age')
-            atrib = form.cleaned_data.get('atrib')
-            type = form.cleaned_data.get('type')
-            port = form.cleaned_data.get('port')
-            classification = form.cleaned_data.get('classification')
-            Entry.objects.filter(ration_age=age, ration_atrib=atrib, ration_type=type, ration_port=port, ration_classification=classification)
-    return render(request, "index.html")
+        age = request.POST['age']
+        atrib = request.POST['atrib']
+        type = request.POST['type']
+        port = request.POST['port']
+        classification = request.POST['classification']
+        aux = Entry.objects.filter(ration_age=age, ration_atrib=atrib, ration_type=type, ration_port=port, ration_classification=classification)
+        args = {"aux": aux}
+        return render(request, "home.html", args)

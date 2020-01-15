@@ -18,34 +18,33 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 </head>
 <body>
-
 <div class="container">
     <div class="row">
         <div class="col-lg-3">
             <h1 class="my-4"></h1>
             <div class="list-group">
-                <form method="post" class="form-signin">
-
-                    <select class="form-control" id="age">
+                <form method="post" class="form-signin" action="{% url 'search' %}">
+                    {% csrf_token %}
+                    <select class="form-control" id="age" name="age">
                         <option value="Junior">Junior</option>
                         <option value="Adulto">Adulto</option>
                         <option value="Senior">Senior</option>
                     </select>
-                    <select multiple class="form-control" id="atrib">
-                        {% for attributes in atribs %}
-                        <option value={{ Attributes.attributes_name }}>{{ Attributes.attributes_name}}</option>
+                    <select multiple class="form-control" id="atrib" name="atrib">
+                        {% for atribs in atribs %}
+                        <option value={{ atribs.attributes_name }}>{{ atribs.attributes_name}}</option>
                         {% endfor %}
                     </select>
-                    <select class="form-control" id="type">
+                    <select class="form-control" id="type" name="type">
                         <option value="Gato">Gato</option>
                         <option value="Cão">Cão</option>
                     </select>
-                    <select class="form-control" id="port">
+                    <select class="form-control" id="port" name="port">
                         <option value="Pequeno">Pequeno</option>
                         <option value="Médio">Médio</option>
                         <option value="Grande">Grande</option>
                     </select>
-                    <select class="form-control" id="classification">
+                    <select class="form-control" id="classification" name="classification">
                         <option value="Económica">Económica</option>
                         <option value="Standart">Standart</option>
                         <option value="Premium">Premium</option>
