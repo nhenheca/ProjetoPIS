@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Deny</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -15,34 +15,21 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
 </head>
-<body>
-<!--{% for ration in rations %}
-    <div>{{ ration.ration_name }}</div>
-{% endfor %}-->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-3">
-            <h1 class="my-4"></h1>
-            <div class="list-group">
-                <a href="#" class="list-group-item">Category 1</a>
-                <a href="#" class="list-group-item">Category 2</a>
-                <a href="#" class="list-group-item">Category 3</a>
-            </div>
+<body class="text-center">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto"></header>
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading">Precisa de estar registado para aceder a esta página.</h1>
+        <div>&nbsp</div>
+        <a href="/" class="btn btn-lg btn-primary btn-block">Retroceder</a>
+    </main>
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p>Πações by <a>MCPR/MALUCAS</a></p>
         </div>
-        <div class="col-lg-9">
-            <h1 class="my-4"></h1>
-            <div class="list-group">
-                <a href="#" class="list-group-item">Category 1</a>
-                <a href="#" class="list-group-item">Category 2</a>
-                <a href="#" class="list-group-item">Category 3</a>
-            </div>
-        </div>
-    </div>
+    </footer>
 </div>
-</div>
-</div>
-
 </body>
 </html>

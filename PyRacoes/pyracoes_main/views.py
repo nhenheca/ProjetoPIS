@@ -42,9 +42,24 @@ def login(request):
 def home(request):
     rations = Ration.objects.all()
     args = {"rations": rations}
-    return render(request, "home.html", args)
+    if request.user.id == None:
+        return render(request, "deny.html")
+    else:
+        return render(request, "home.html", args)
 
 
 def logout(request):
     auth_logout(request)
+    return render(request, "index.html")
+
+
+def search(request):
+    if request.method == 'POST':
+        if form.is_valid():
+            age = form.cleaned_data.get('age')
+            atrib = form.cleaned_data.get('atrib')
+            type = form.cleaned_data.get('type')
+            port = form.cleaned_data.get('port')
+            classification = form.cleaned_data.get('classification')
+            Entry.objects.filter(ration_age=age, ration_atrib=atrib, ration_type=type, ration_port=port, ration_classification=classification)
     return render(request, "index.html")
