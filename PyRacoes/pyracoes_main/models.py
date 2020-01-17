@@ -60,5 +60,6 @@ class Ration(models.Model):
     ration_port = models.ManyToManyField(Port)
     ration_classification = models.ManyToManyField(Classification)
     ration_price = models.FloatField()
+    ration_url = models.CharField(max_length=2083)
     def __str__(self):
         return self.ration_name
