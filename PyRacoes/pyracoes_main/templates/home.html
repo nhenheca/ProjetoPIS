@@ -60,21 +60,24 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                    <th scope="col">Handle</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Idade</th>
+                    <th scope="col">Porte</th>
+                    <th scope="col">Atributo</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Preço</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>Mark</td>
+                    {% for aux in aux %}
+                        <td value={{ atribs.attributes_name }}>{{ aux.ration_name}}</td>
+                    {% endfor %}
+                    <!--<td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>
                     <td>@mdo</td>
-                    <td>@mdo</td>
+                    <td>@mdo</td>-->
                 </tr>
                 </tbody>
             </table>
