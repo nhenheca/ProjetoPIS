@@ -60,8 +60,8 @@ def search(request):
         ration_type = request.POST['ration_type']
         ration_port = request.POST['ration_port']
         ration_classification = request.POST['ration_classification']
-        aux = Ration.objects.all().get(ration_age=ration_age, ration_atrib=ration_atrib, ration_type=ration_type, ration_port=ration_port, ration_classification=ration_classification)
-        #aux = Ration.objects.all().filter(ration_age=age).filter(ration_atrib=atrib).filter(ration_type=type).filter(ration_port=port).filter(ration_classification=classification)
+        #aux = Ration.objects.all().get(ration_age=ration_age, ration_atrib=ration_atrib, ration_type=ration_type, ration_port=ration_port, ration_classification=ration_classification)
+        aux = Ration.objects.all().filter(ration_age__age_name=age).filter(ration_atrib__attributes_name=atrib).filter(ration_type__type_name=type).filter(ration_port__port_name=port).filter(ration_classification__classification_name=classification)
         #aux = Ration.objects.all()
         args = {"aux": aux}
         return render(request, "home.html", args)
