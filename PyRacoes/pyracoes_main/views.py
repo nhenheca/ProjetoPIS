@@ -64,8 +64,10 @@ def search(request):
         ration_type = request.POST['ration_type']
         ration_port = request.POST['ration_port']
         ration_classification = request.POST['ration_classification']
+        atribs = Attributes.objects.all()
+        args2 = {"atribs": atribs}
         aux = Ration.objects.all().filter(ration_age__age_name=ration_age).filter(ration_atrib__attributes_name=ration_atrib).filter(ration_type__type_name=ration_type).filter(ration_port__port_name=ration_port).filter(ration_classification__classification_name=ration_classification)
         args = {"aux": aux}
-        return render(request, "home.html", args)
+        return render(request, "home.html", args, args2)
 
 
