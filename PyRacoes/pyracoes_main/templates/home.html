@@ -18,6 +18,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 </head>
 <body>
+
+
 <div class="container">
     <div class="row">
         <div class="col-lg-3">
@@ -29,26 +31,31 @@
                         <option value="Cão">Cão</option>
                         <option value="Gato">Gato</option>
                     </select>
+                    <div> &nbsp</div>
                     <select class="form-control" id="ration_age" name="ration_age">
                         <option value="Junior">Junior</option>
                         <option value="Adulto">Adulto</option>
                         <option value="Senior">Senior</option>
                     </select>
+                    <div> &nbsp</div>
                     <select class="form-control" id="ration_port" name="ration_port">
                         <option value="Pequeno">Pequeno</option>
                         <option value="Médio">Médio</option>
                         <option value="Grande">Grande</option>
                     </select>
+                    <div> &nbsp</div>
                     <select class="form-control" id="ration_classification" name="ration_classification">
                         <option value="Económica">Económica</option>
                         <option value="Standart">Standart</option>
                         <option value="Premium">Premium</option>
                     </select>
+                    <div> &nbsp</div>
                     <select class="form-control" id="ration_atrib" name="ration_atrib">
                         {% for atribs in atribs %}
                         <option value={{ atribs.attributes_name }}>{{ atribs.attributes_name}}</option>
                         {% endfor %}
                     </select>
+                    <div> &nbsp</div>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Pesquisar</button>
                 </form>
 
@@ -61,7 +68,6 @@
                 <tr>
                     <th scope="col" style="color:SteelBlue">Nome</th>
                     <th scope="col" style="color:SteelBlue">Descrição</th>
-                    <th scope="col" style="color:SteelBlue">Classificação</th>
                     <th scope="col" style="color:SteelBlue">Preço</th>
                     <th scope="col" style="color:SteelBlue">Link</th>
                 </tr>
@@ -69,11 +75,10 @@
                 <tbody>
                 {% for aux in aux %}
                 <tr>
-                    <td value={{ atribs.attributes_name }}>{{ aux.ration_name}}</td>
-                    <td value={{ atribs.attributes_name }}>{{ aux.ration_desc}}</td>
-                    <td value={{ atribs.attributes_name }}>{{ aux.ration_classification.}}</td>
-                    <td value={{ atribs.attributes_name }}>{{ aux.ration_price}}</td>
-                    <td value={{ atribs.attributes_name }}><a href="https://{{ aux.ration_url}}">{{ aux.ration_url}}</a>
+                    <td value={{ aux.attributes_name }}>{{ aux.ration_name}}</td>
+                    <td value={{ aux.attributes_name }}>{{ aux.ration_desc}}</td>
+                    <td value={{ aux.attributes_name }}>{{ aux.ration_price}}</td>
+                    <td value={{ aux.attributes_name }}><a href="https://{{ aux.ration_url}}">{{ aux.ration_url}}</a>
                     </td>
                 </tr>
                 {% endfor %}
