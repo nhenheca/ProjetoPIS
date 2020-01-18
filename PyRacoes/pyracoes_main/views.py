@@ -53,6 +53,11 @@ def logout(request):
     return render(request, "index.html")
 
 
+def edit(request):
+    auth_logout(request)
+    return render(request, "edit.html")
+
+
 def search(request):
     if request.method == 'POST':
         ration_age = request.POST['ration_age']

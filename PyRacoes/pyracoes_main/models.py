@@ -64,9 +64,3 @@ class Ration(models.Model):
     ration_url = models.CharField(max_length=2083)
     def __str__(self):
         return self.ration_name
-
-
-def link_user(sender, **kwargs):
-    if kwargs['created']:
-        User.objects.create(user=kwargs['instance'])
-post_save.connect(link_user, sender=UserDJANGO)
