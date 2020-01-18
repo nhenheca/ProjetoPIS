@@ -30,7 +30,6 @@ class Age(models.Model):
 class Animal(models.Model):
     animal_name = models.CharField(max_length=255)
     animal_age = models.ManyToManyField(Age)
-    animal_weight = models.FloatField()
     animal_type = models.ManyToManyField(Type)
     animal_port = models.ManyToManyField(Port)
     def __str__(self):

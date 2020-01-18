@@ -24,7 +24,7 @@
             <a class="nav-link" href="/">Πações</a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="/edit">{{ user.username }}</a>
+            <a class="nav-link" href="/addAnimalPage">{{ user.username }}</a>
         </li>
     </ul>
 </nav>
@@ -33,7 +33,7 @@
         <div class="col-lg-3">
             <h1 class="my-4"></h1>
             <div class="list-group">
-                <form method="post" class="form-signin" action="{% url 'search' %}">
+                <form method="post" class="form-signin" action="{% url 'addAnimal' %}">
                     {% csrf_token %}
                     <select class="form-control" id="ration_type" name="ration_type">
                         <option value="Cão">Cão</option>
