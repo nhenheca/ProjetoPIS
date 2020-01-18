@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User as UserDJANGO
+from django.db.models.signals import post_save
 
 # Create your models here.
 class Type(models.Model):
@@ -63,3 +64,9 @@ class Ration(models.Model):
     ration_url = models.CharField(max_length=2083)
     def __str__(self):
         return self.ration_name
+
+
+def link_user(sender, **kwargs):
+    if kwargs['created']:
+        User.objects.create(user=kwargs['instance'])
+post_save.connect(link_user, sender=UserDJANGO)
