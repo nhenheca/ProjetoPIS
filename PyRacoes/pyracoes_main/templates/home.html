@@ -25,19 +25,14 @@
             <div class="list-group">
                 <form method="post" class="form-signin" action="{% url 'search' %}">
                     {% csrf_token %}
+                    <select class="form-control" id="ration_type" name="ration_type">
+                        <option value="Cão">Cão</option>
+                        <option value="Gato">Gato</option>
+                    </select>
                     <select class="form-control" id="ration_age" name="ration_age">
                         <option value="Junior">Junior</option>
                         <option value="Adulto">Adulto</option>
                         <option value="Senior">Senior</option>
-                    </select>
-                    <select class="form-control" id="ration_atrib" name="ration_atrib">
-                        {% for atribs in atribs %}
-                        <option value={{ atribs.attributes_name }}>{{ atribs.attributes_name}}</option>
-                        {% endfor %}
-                    </select>
-                    <select class="form-control" id="ration_type" name="ration_type">
-                        <option value="Cão">Cão</option>
-                        <option value="Gato">Gato</option>
                     </select>
                     <select class="form-control" id="ration_port" name="ration_port">
                         <option value="Pequeno">Pequeno</option>
@@ -49,6 +44,11 @@
                         <option value="Standart">Standart</option>
                         <option value="Premium">Premium</option>
                     </select>
+                    <select class="form-control" id="ration_atrib" name="ration_atrib">
+                        {% for atribs in atribs %}
+                        <option value={{ atribs.attributes_name }}>{{ atribs.attributes_name}}</option>
+                        {% endfor %}
+                    </select>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Pesquisar</button>
                 </form>
 
@@ -56,26 +56,25 @@
         </div>
         <div class="col-lg-9">
             <h1 class="my-4"></h1>
-            <table class="table">
+            <table class="table table-striped table-light">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Classificação</th>
-                    <th scope="col">Preço</th>
-                    <th scope="col">Link</th>
+                    <th scope="col" style="color:SteelBlue">Nome</th>
+                    <th scope="col" style="color:SteelBlue">Descrição</th>
+                    <th scope="col" style="color:SteelBlue">Classificação</th>
+                    <th scope="col" style="color:SteelBlue">Preço</th>
+                    <th scope="col" style="color:SteelBlue">Link</th>
                 </tr>
                 </thead>
                 <tbody>
                 {% for aux in aux %}
                 <tr>
-                    <th scope="row">1</th>
                     <td value={{ atribs.attributes_name }}>{{ aux.ration_name}}</td>
                     <td value={{ atribs.attributes_name }}>{{ aux.ration_desc}}</td>
                     <td value={{ atribs.attributes_name }}>{{ aux.ration_classification}}</td>
                     <td value={{ atribs.attributes_name }}>{{ aux.ration_price}}</td>
-                    <td value={{ atribs.attributes_name }}><a>{{ aux.ration_url}}</a></td>
+                    <td value={{ atribs.attributes_name }}><a href="https://{{ aux.ration_url}}">{{ aux.ration_url}}</a>
+                    </td>
                 </tr>
                 {% endfor %}
                 </tbody>
