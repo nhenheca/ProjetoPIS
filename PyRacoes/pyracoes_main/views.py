@@ -41,11 +41,11 @@ def login(request):
 
 def home(request):
     atribs = Attributes.objects.all()
-    args2 = {"atribs": atribs}
+    args = {"atribs": atribs}
     if request.user.id == None:
         return render(request, "deny.html")
     else:
-        return render(request, "home.html", args2)
+        return render(request, "home.html", args)
 
 
 def logout(request):
@@ -62,6 +62,4 @@ def search(request):
         ration_classification = request.POST['ration_classification']
         aux = Ration.objects.all().filter(ration_age__age_name=ration_age).filter(ration_atrib__attributes_name=ration_atrib).filter(ration_type__type_name=ration_type).filter(ration_port__port_name=ration_port).filter(ration_classification__classification_name=ration_classification)
         args = {"aux": aux}
-        atribs = Attributes.objects.all()
-        args2 = {"atribs": atribs}
-        return render(request, "home.html", args, args2)
+        return render(request, "home.html", args)
