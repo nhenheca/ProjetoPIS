@@ -42,7 +42,7 @@ class User(models.Model):
     user_animals = models.ManyToManyField(Animal, blank=True)
 
     def __str__(self):
-        return self.user_django.email
+        return self.user_django
 
 
 class Attributes(models.Model):
