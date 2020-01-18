@@ -28,16 +28,17 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/css" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\mcpri\Documents\GitHub\ProjetoPIS\PyRacoes\static\images" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mcpri\Documents\GitHub\ProjetoPIS\PyRacoes\static\css" />
       <recent name="C:\Users\mcpri\Documents\GitHub\ProjetoPIS\PyRacoes\pyracoes_main\templates" />
       <recent name="C:\Users\mcpri\Documents\GitHub\ProjetoPIS\PyRacoes\static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mcpri\Documents\GitHub\ProjetoPIS\PyRacoes\static\images" />
     </key>
   </component>
   <component name="ServiceViewManager">

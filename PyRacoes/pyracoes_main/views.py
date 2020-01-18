@@ -54,7 +54,6 @@ def logout(request):
 
 
 def edit(request):
-    auth_logout(request)
     return render(request, "edit.html")
 
 
@@ -68,3 +67,5 @@ def search(request):
         aux = Ration.objects.all().filter(ration_age__age_name=ration_age).filter(ration_atrib__attributes_name=ration_atrib).filter(ration_type__type_name=ration_type).filter(ration_port__port_name=ration_port).filter(ration_classification__classification_name=ration_classification)
         args = {"aux": aux}
         return render(request, "home.html", args)
+
+
