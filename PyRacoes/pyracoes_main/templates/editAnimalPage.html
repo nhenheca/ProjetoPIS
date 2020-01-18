@@ -35,7 +35,7 @@
     <form method="post" class="form-signin" action="{% url 'editAnimal' %}">
         {% csrf_token %}
         <img class="mb-4" src="{% static 'images/logo_transparent.png' %}" alt="" width="300" height="300">
-        <h1 class="h3 mb-3 font-weight-normal text-white">Adicione o seu Animal de Estimação</h1>
+        <h1 class="h3 mb-3 font-weight-normal text-white">Edite o seu Animal de Estimação</h1>
 
         <input type="text" id="animal_name" name="animal_name" class="form-control"
                placeholder="Nome do Seu Animal de Estimação">
@@ -54,7 +54,7 @@
             <option value="Grande">Grande</option>
         </select>
         <div> &nbsp</div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Adicionar</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Editar</button>
     </form>
 </div>
 </body>

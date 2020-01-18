@@ -11,5 +11,5 @@ urlpatterns = [
     path("editAnimalPage/", views.editAnimalPage, name="editAnimalPage"),
     path("search/", views.search, name="search"),
     path("addAnimal/", views.addAnimal, name="addAnimal"),
-    path("editAnimal/", views.addAnimal, name="addAnimal")
+    path("editAnimal/", views.editAnimal, name="editAnimal")
 ]
