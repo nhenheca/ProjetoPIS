@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import logout as auth_logout
 from .models import User, Animal, Ration, Attributes
 from django.http import HttpResponse
-
+from pyracoes_main.models import User as MyUser
 
 # Create your views here.
 
@@ -22,6 +22,7 @@ def signup(request):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
+            MyUser.objects.create(user_django=user)
             auth_login(request, user)
             return redirect("home")
     return render(request, 'signup.html', {'form': form})
