@@ -33,7 +33,7 @@
         <div class="col-lg-3">
             <h1 class="my-4"></h1>
             <div class="list-group">
-                <form method="post" class="form-signin" action="{% url 'addAnimal' %}">
+                <form method="post" class="form-signin" action="{% url 'search' %}">
                     {% csrf_token %}
                     <select class="form-control" id="ration_type" name="ration_type">
                         <option value="Cão">Cão</option>
