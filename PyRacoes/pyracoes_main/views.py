@@ -89,11 +89,11 @@ def addAnimal(request):
         return render(request, "deny.html")
     else:
         if request.method == 'POST':
-            animal_name = request.POST['animal_name']
-            animal_type = request.POST['animal_type']
-            animal_age = request.POST['animal_age']
-            animal_port = request.POST['animal_port']
-            animal = Animal(animal_name=animal_name, animal_age=animal_type, animal_type=animal_age, animal_port=animal_port)
+            animal_name = request.POST.get('animal_name')
+            animal_type = request.POST.get('animal_type')
+            animal_age = request.POST.get('animal_age')
+            animal_port = request.POST.get('animal_port')
+            animal = Animal(animal_name=animal_name, animal_age=animal_age, animal_type=animal_type, animal_port=animal_port)
             animal.save()
             return render(request, "home.html", args)
 
