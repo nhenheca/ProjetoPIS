@@ -93,6 +93,8 @@ def addAnimal(request):
             animal_type = request.POST['animal_type']
             animal_age = request.POST['animal_age']
             animal_port = request.POST['animal_port']
+            animal = Animal(animal_name=animal_name, animal_age=animal_type, animal_type=animal_age, animal_port=animal_port)
+            animal.save()
             return render(request, "home.html", args)
 
 
